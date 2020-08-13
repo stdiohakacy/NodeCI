@@ -73,7 +73,6 @@ describe('User is not logged in', async () => {
                 }).then(res => res.json())
             }
         )
-
         expect(result).toEqual({error: 'You must log in!'})
     })
 })
