@@ -26,13 +26,7 @@ test('Clicking login starts oauth flow', async () => {
 })
 
 test('When signed in, shows logout button', async () => {
-    const user = await userFactory()
-    const { session, sig } = await sessionFactory(user)
-
-    await page.setCookie({ name: 'session', value: session })
-    await page.setCookie({ name: 'session.sig', value: sig })
-    await page.goto('localhost:3000')
-    await page.waitFor('a[href="/auth/logout"]')
+    await page.login()
 
     const text = await page.$eval('a[href="/auth/logout"]', el => el.innerHTML)
     expect(text).toEqual('Logout')
