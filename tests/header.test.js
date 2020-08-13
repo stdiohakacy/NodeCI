@@ -9,7 +9,7 @@ beforeEach(async () => {
 })
 
 afterEach(async () => {
-    // await browser.close()
+    await browser.close()
 })
 
 test('The header has the correct text', async () => {
@@ -23,7 +23,7 @@ test('Clicking login starts oauth flow', async () => {
     expect(url).toMatch(/accounts\.google\.com/)
 })
 
-test.only('When signed in, shows logout button', async () => {
+test('When signed in, shows logout button', async () => {
     const id = '5f34aabd2c6501290c935f26'
     const Buffer = require('safe-buffer').Buffer
     const sessionObject = {
