@@ -4,7 +4,7 @@ node_js:
 dist: trusty
 services:
   - mongodb
-  - redis
+  - redis-server
 env:
   - NODE_ENV=ci
   - PORT=3000
@@ -17,5 +17,5 @@ install:
   - npm run build
 script:
   - nohup npm run start &
-  - sleep 3
-  - npm run test
+  - sleep 10
+  - npm test
