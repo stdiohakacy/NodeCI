@@ -7,7 +7,7 @@ import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
 import BlogNew from './blogs/BlogNew';
-import BlogShow from './blogs/BlogShow';
+import BlogShow from './blogs/BlogShow'
 
 class App extends Component {
   componentDidMount() {
