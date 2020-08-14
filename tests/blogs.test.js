@@ -2,7 +2,9 @@ const Page = require('./helpers/page')
 let page
 
 beforeEach(async () => {
+    console.log("11111111111")
     page = await Page.build()
+    console.log(`2222222222 ${page}`)
     await page.goto('http://localhost:3000')
 })
 
@@ -12,14 +14,16 @@ afterEach(async () => {
 
 describe('When logged in', async () => {
     beforeEach(async () => {
+        console.log("33333333333333333")
         await page.login()
+        console.log("55555555555555")
         await page.click('a.btn-floating')
+        console.log("44444444444444444")
+
     })
 
     test('When logged in, can see blog create form', async () => {
-        console.log('1111111111')
         const label = await page.getContentsOf('form label')
-        console.log('222222222222')
         expect(label).toEqual('Blog Title')
     })
 
