@@ -17,7 +17,9 @@ describe('When logged in', async () => {
     })
 
     test('When logged in, can see blog create form', async () => {
+        console.log('1111111111')
         const label = await page.getContentsOf('form label')
+        console.log('222222222222')
         expect(label).toEqual('Blog Title')
     })
 
@@ -34,7 +36,7 @@ describe('When logged in', async () => {
 
         test('Submitting then saving adds blog to index page', async () => {
             await page.click('button.green')
-            await page.waitFor('.card', { waitUntil: 'load', timeout: 0 })
+            await page.waitFor('.card')
 
             const title = await page.getContentsOf('.card-title')
             const content = await page.getContentsOf('p')
